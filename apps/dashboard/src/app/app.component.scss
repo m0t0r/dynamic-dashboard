@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-sidenav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: 320px;
+  height: 100vh;
+}

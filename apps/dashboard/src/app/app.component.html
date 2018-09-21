@@ -1,0 +1,31 @@
+<mat-sidenav-container class="app-sidenav-container">
+
+  <mat-sidenav #appSidenav class="app-sidenav" position="start" mode="over">
+    <mat-toolbar color="primary"></mat-toolbar>
+    <mat-nav-list class="app-sidenav-submenu">
+      <a
+        mat-list-item
+        *ngFor="let link of menuLinks"
+        [routerLink]="link.href"
+        (click)="appSidenav.close()"
+      >
+        <mat-icon matListIcon>{{ link.icon }}</mat-icon>
+        {{ link.label }}
+      </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="app-sidenav-toolbar" color="primary">
+      <button mat-icon-button (click)="appSidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dashboard</span>
+    </mat-toolbar>
+
+    <div class="app-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
